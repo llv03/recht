@@ -1,0 +1,421 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Recht - Product Showcase</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,300;1,6..72,400&family=IBM+Plex+Mono:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      :root {
+        --bg: #1e1e1e;
+        --bg2: #252526;
+        --bg3: #2a2a2b;
+        --border: #3a3a3a;
+        --text: #cccccc;
+        --text2: #9a9a9a;
+        --muted: #666666;
+        --white: #e8e8e8;
+        --serif: "Newsreader", Georgia, serif;
+        --mono: "IBM Plex Mono", monospace;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        background: var(--bg);
+        color: var(--text);
+        font-family: var(--serif);
+        font-size: 16px;
+        line-height: 1.72;
+        -webkit-font-smoothing: antialiased;
+      }
+
+      .topbar {
+        display: flex;
+        justify-content: flex-end;
+        gap: 14px;
+        padding: 18px 34px;
+        border-bottom: 1px solid var(--border);
+      }
+
+      .topbar a {
+        font-family: var(--mono);
+        font-size: 12px;
+        color: var(--muted);
+        text-decoration: none;
+        letter-spacing: 0.04em;
+        display: flex;
+        align-items: center;
+        gap: 7px;
+        transition: color 0.18s ease;
+      }
+
+      .topbar a:hover {
+        color: var(--text);
+      }
+
+      .page {
+        max-width: 980px;
+        margin: 0 auto;
+        padding: 56px 34px 110px;
+      }
+
+      .site-header {
+        margin-bottom: 34px;
+      }
+
+      .site-header h1 {
+        font-family: var(--serif);
+        font-size: 50px;
+        font-weight: 400;
+        color: var(--white);
+        line-height: 1.05;
+        letter-spacing: -0.01em;
+        margin-bottom: 9px;
+      }
+
+      .site-header .tagline {
+        color: var(--text2);
+        font-size: 17px;
+      }
+
+      .intro {
+        border-left: 3px solid #4b4b4b;
+        padding: 2px 0 2px 18px;
+        margin: 0 0 32px;
+        color: var(--text2);
+        font-size: 15px;
+        font-style: italic;
+      }
+
+      .feature-cards {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+        margin: 0 0 40px;
+      }
+
+      .feature {
+        background: linear-gradient(180deg, #262626, #232324);
+        border: 1px solid #343434;
+        border-radius: 13px;
+        padding: 15px 16px;
+      }
+
+      .feature h3 {
+        color: var(--white);
+        font-size: 20px;
+        line-height: 1.2;
+        margin-bottom: 6px;
+      }
+
+      .feature p {
+        color: var(--text2);
+        font-size: 14px;
+        line-height: 1.6;
+      }
+
+      hr {
+        border: none;
+        border-top: 1px solid var(--border);
+        margin: 34px 0;
+      }
+
+      section h2 {
+        font-size: 28px;
+        font-weight: 400;
+        color: var(--white);
+        margin-bottom: 10px;
+      }
+
+      .section-copy {
+        color: var(--text2);
+        font-size: 15px;
+        margin-bottom: 24px;
+      }
+
+      .gallery {
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 16px;
+        justify-items: center;
+      }
+
+      .shot {
+        width: 100%;
+        background: var(--bg2);
+        border: 1px solid var(--border);
+        border-radius: 14px;
+        overflow: hidden;
+        box-shadow: 0 14px 38px rgba(0, 0, 0, 0.22);
+      }
+
+      .shot img {
+        width: 100%;
+        height: auto;
+        display: block;
+        object-fit: contain;
+        background: #1a1a1a;
+        cursor: zoom-in;
+      }
+
+      .shot figcaption {
+        font-family: var(--mono);
+        font-size: 11px;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: #8f8f8f;
+        border-top: 1px solid var(--border);
+        padding: 10px 12px;
+      }
+
+      .shot.full {
+        grid-column: 1 / -1;
+        max-width: 760px;
+      }
+
+      .site-footer {
+        border-top: 1px solid var(--border);
+        margin-top: 42px;
+        padding-top: 24px;
+        font-family: var(--mono);
+        font-size: 11px;
+        color: var(--muted);
+        letter-spacing: 0.03em;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+
+      .lightbox {
+        position: fixed;
+        inset: 0;
+        background: rgba(10, 10, 10, 0.84);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 22px;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.22s ease;
+        z-index: 9999;
+      }
+
+      .lightbox.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+
+      .lightbox-content {
+        position: relative;
+        width: min(1240px, 100%);
+        max-height: min(92vh, 980px);
+        transform: scale(0.98);
+        transition: transform 0.22s ease;
+      }
+
+      .lightbox.open .lightbox-content {
+        transform: scale(1);
+      }
+
+      .lightbox img {
+        width: 100%;
+        max-height: min(90vh, 980px);
+        object-fit: contain;
+        border-radius: 14px;
+        border: 1px solid #3b3b3b;
+        background: #111;
+        box-shadow: 0 20px 70px rgba(0, 0, 0, 0.48);
+      }
+
+      .lightbox-close {
+        position: absolute;
+        top: -10px;
+        right: -10px;
+        border: 1px solid #4a4a4a;
+        background: #1f1f1f;
+        color: #d8d8d8;
+        width: 36px;
+        height: 36px;
+        border-radius: 999px;
+        font-size: 22px;
+        line-height: 1;
+        cursor: pointer;
+      }
+
+      .lightbox-close:hover {
+        background: #2a2a2a;
+      }
+
+      @media (max-width: 820px) {
+        .feature-cards {
+          grid-template-columns: 1fr;
+        }
+
+        .gallery {
+          grid-template-columns: 1fr;
+        }
+
+        .shot.full {
+          max-width: none;
+        }
+
+        .lightbox {
+          padding: 14px;
+        }
+
+        .lightbox-close {
+          top: 8px;
+          right: 8px;
+          width: 34px;
+          height: 34px;
+          background: rgba(20, 20, 20, 0.9);
+        }
+      }
+
+      @media (max-width: 560px) {
+        .topbar {
+          padding: 14px 18px;
+        }
+
+        .page {
+          padding: 36px 18px 84px;
+        }
+
+        .site-header h1 {
+          font-size: 41px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="topbar">
+      <a href="#screenshots">View screenshots</a>
+    </div>
+
+    <main class="page">
+      <header class="site-header">
+        <h1>Recht</h1>
+        <p class="tagline">A legal research workspace for rapid news, EUR-Lex exploration, saved judgments, and topic modeling.</p>
+      </header>
+
+      <p class="intro">
+        Recht helps legal teams track law-related headlines, inspect case details by CELEX, save operative parts for later, and run model inference to produce topic tags with confidence.
+      </p>
+
+      <div class="feature-cards">
+        <article class="feature">
+          <h3>News Discovery</h3>
+          <p>Browse categorized law updates with in-app article reading for quick triage and ongoing monitoring.</p>
+        </article>
+        <article class="feature">
+          <h3>Case-Law Lookup</h3>
+          <p>Search EUR-Lex judgments by page ranges and inspect operative part, judgment text, and citations.</p>
+        </article>
+        <article class="feature">
+          <h3>Saved Eurlex</h3>
+          <p>Bookmark key documents and revisit essential rulings without searching again each session.</p>
+        </article>
+        <article class="feature">
+          <h3>Model Inference</h3>
+          <p>Generate predicted legal topic tags from text, including confidence indicators and export-ready output.</p>
+        </article>
+      </div>
+
+      <hr />
+
+      <section id="screenshots">
+        <h2>Product Screens</h2>
+
+        <div class="gallery">
+          <figure class="shot">
+            <img src="ss1.png" alt="Recht home screen" loading="lazy" />
+            <figcaption>Home</figcaption>
+          </figure>
+          <figure class="shot">
+            <img src="ss2.png" alt="Recht news screen" loading="lazy" />
+            <figcaption>News</figcaption>
+          </figure>
+          <figure class="shot">
+            <img src="ss3.png" alt="Recht eurlex lookup screen" loading="lazy" />
+            <figcaption>Eurlex</figcaption>
+          </figure>
+          <figure class="shot">
+            <img src="ss4.png" alt="Recht saved eurlex screen" loading="lazy" />
+            <figcaption>Saved Eurlex</figcaption>
+          </figure>
+          <figure class="shot full">
+            <img src="ss5.png" alt="Recht model inference screen" loading="lazy" />
+            <figcaption>Model Inference</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <footer class="site-footer">
+        <span>Recht</span>
+        <span>Made with Tauri</span>
+      </footer>
+    </main>
+
+    <div class="lightbox" id="lightbox" aria-hidden="true">
+      <div class="lightbox-content" role="dialog" aria-modal="true" aria-label="Expanded screenshot">
+        <button class="lightbox-close" id="lightbox-close" aria-label="Close image">&times;</button>
+        <img id="lightbox-image" alt="Expanded screenshot" />
+      </div>
+    </div>
+
+    <script>
+      const lightbox = document.getElementById("lightbox");
+      const lightboxImage = document.getElementById("lightbox-image");
+      const lightboxClose = document.getElementById("lightbox-close");
+      const screenshotImages = document.querySelectorAll(".shot img");
+
+      function openLightbox(src, alt) {
+        lightboxImage.src = src;
+        lightboxImage.alt = alt || "Expanded screenshot";
+        lightbox.classList.add("open");
+        lightbox.setAttribute("aria-hidden", "false");
+        document.body.style.overflow = "hidden";
+      }
+
+      function closeLightbox() {
+        lightbox.classList.remove("open");
+        lightbox.setAttribute("aria-hidden", "true");
+        document.body.style.overflow = "";
+      }
+
+      screenshotImages.forEach((img) => {
+        img.addEventListener("click", () => openLightbox(img.src, img.alt));
+      });
+
+      lightboxClose.addEventListener("click", closeLightbox);
+
+      lightbox.addEventListener("click", (event) => {
+        if (event.target === lightbox) closeLightbox();
+      });
+
+      document.addEventListener("keydown", (event) => {
+        if (event.key === "Escape" && lightbox.classList.contains("open")) {
+          closeLightbox();
+        }
+      });
+    </script>
+  </body>
+</html>
