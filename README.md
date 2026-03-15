@@ -6,9 +6,9 @@
   <img src="Recht.png" alt="PyInterp" width="800">
 </div>
 
-<br>
+---
 
-<p> Installation instructions : </p>
+## Installation Instructions
 
 After dragging the app to Applications , it may not open since this isn't a notarized/signed app. Run the following in the terminal
 
