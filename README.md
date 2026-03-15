@@ -23,3 +23,10 @@ For testing out Recht quickly , it's also on the web at - https://recht.vishalve
 For my topic modelling , the documentation to the website is at - https://topicmodeldocs.vishalvenkat.dev
 
 ---
+
+## Data Sources
+
+- News articles: [`Above the Law (ATL)`](https://abovethelaw.com)
+- Court cases: [`EUR-Lex`](https://eur-lex.europa.eu/search.html?DTS_SUBDOM=EU_CASE_LAW&DTS_DOM=EU_LAW&CASE_LAW_SUMMARY=false&type=advanced&qid=1773609077250)
+
+---
