@@ -3,7 +3,7 @@
 </div>
 
 <div align="center">
-  <img src="Recht.png" alt="PyInterp" width="800">
+  <img src="recht.gif" alt="PyInterp" width="800">
 </div>
 
 ---
