@@ -27,6 +27,6 @@ For my topic modelling , the documentation to the website is at - https://topicm
 ## Data Sources
 
 - News articles: [`Above the Law (ATL)`](https://abovethelaw.com)
-- Court cases: [`EUR-Lex`](https://eur-lex.europa.eu/search.html?DTS_SUBDOM=EU_CASE_LAW&DTS_DOM=EU_LAW&CASE_LAW_SUMMARY=false&type=advanced&qid=1773609077250)
+- Court cases: [`EUR-Lex`](https://eur-lex.europa.eu/search.html?DTS_SUBDOM=EU_CASE_LAW&DTS_DOM=EU_LAW&CASE_LAW_SUMMARY=false&type=advanced&qid=1773609077250) Cloudfront may block the requests sometimes since I'm scraping eurlex for court cases
 
 ---
