@@ -13,7 +13,7 @@
 After downloading the dmg from `releases` and  dragging the app to Applications , it may not open since this isn't a notarized/signed app. Run the following in the terminal
 
 ```bash
-xattr -dr com.apple.quarantine "/Applications/Recht.app" 
+xattr -dr com.apple.quarantine "/Applications/Caseflow.app" 
 ```
 ---
 
